@@ -1,0 +1,74 @@
+.download__container {
+    padding-top: 250px;
+    position:relative
+}
+
+.download__inner {
+    width: 440px;
+}
+
+.trafalgar__image {
+    display:block;
+    top: 250px;
+    right: 0px;
+    position: absolute;
+    width: 761px;
+    height: 503px;
+}
+
+
+.download__image {
+    padding-left: 20px;
+}
+
+.download__paragraph {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 30px;
+    letter-spacing: 0px;
+    max-width: 360px;
+    color: #7D7987;
+}
+
+
+.download__heading {
+    font-size: 50px;
+    line-height: 66px;
+    letter-spacing: 0px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.download__divider {
+    height: 3px;
+    width: 60px;
+    color: #000000;
+    margin-bottom: 25px;
+    border-radius: 20%;
+    background-color: #555;
+}
+
+
+
+
+.download__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+
+
+.download__button {
+    border: 2px solid dodgerblue;
+    background-color: white;
+    width: 200px;
+    font-weight: 500;
+    height: 56px;
+    color: dodgerblue;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+}

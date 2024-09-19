@@ -1,0 +1,67 @@
+body {
+    font-family: "Mulish", sans-serif !important;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    margin: auto;
+}
+
+
+a {
+    color: #1F1534;
+    text-decoration: none;
+}
+
+button {
+    background-color: #FFFFFF;
+    color: #458FF6;
+    border-radius: 35px;
+    border: 2px solid #458FF6;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+li {
+    display: block;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+p {
+    font-size: 18px;
+    font-weight: 400;
+    color: #7D7987;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    right: 20px;
+    left: 20px;
+}
+
+@media screen and (max-width: 728px) {
+    .container {
+        padding: 0 40px;
+    }
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: block;
+}
+
