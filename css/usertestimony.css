@@ -25,21 +25,11 @@
 		color: #FFFFFF;
 	}
 
-@media screen and (max-width:368px) {
-	.user-testimony__content {
-		max-width: 100%;
-	}
-
-	.user-testimony__section {
-		padding: 70px 90px 0px;
-	}
-}
-
 .user-testimony_divider {
 	height: 2px;
-	width: 60px;
+	width: 90px;
 	color: white;
-	margin-top: 10px;
+	margin-top: 40px;
 	border-radius: 20%;
 	background-color: white
 }
@@ -58,32 +48,42 @@
 	margin-right: 30px;
 }
 
-#person_info {
+.person_info {
 	margin-right: 70px;
 }
 
-#name {
+.name {
 	color: #FFFFFF;
 	font-size: 24px;
 	font-weight: 700;
 	min-width: 200px;
 }
 
-#status {
+.status {
 	color: #FFFFFFD9;
 	font-size: 19px;
 }
 
-#quote {
+.quote {
 	color: #FFFFFF;
 	width: 390px;
 	font-size: 19px;
 }
 
+.user-testimony__button_left {
+	margin-right: 30px;
+}
+
+.user-testimony__button_right {
+	margin-left: 30px;
+}
+
 .user-testimony__navigate {
-	margin-top: 42px;
-	margin-bottom: 142px;
-	display: flex;
+	margin-top: 40px;
+	margin-bottom: 100px;
+	display: block;
+	justify-content: space-between;
+
 }
 
 	.user-testimony__navigate button {
@@ -92,3 +92,4 @@
 		margin-left: 90px;
 		background: transparent;
 	}
+

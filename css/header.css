@@ -1,4 +1,8 @@
 
+header {
+    background-color: #f1f9ff;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -10,7 +14,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 20px;
+    padding-top: 70px;
 }
 
 .header__top {
@@ -60,11 +64,6 @@
     .header__bottom a {
         color: #458FF6;
     }
-
-#down_arrow {
-    transform: rotate(90deg);
-    margin-left: 8px;
-}
 
 .header__info {
     width: 361px;

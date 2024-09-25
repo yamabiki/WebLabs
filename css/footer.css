@@ -1,5 +1,5 @@
 footer {
-    background: linear-gradient(to top right, #5A98F2, #67C3F3);
+    background: linear-gradient(to top right, #5A98F2, #67c3f1);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,17 +14,17 @@ footer {
 
 .bottom_navigate {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    margin-left: 120px;
-    width: 100%;
+    margin-left: 240px;
+    width: 50%;
 }
 
 
 
     .bottom_navigate nav {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         width: 100%;
     }

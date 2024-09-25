@@ -1,16 +1,19 @@
 .download__container {
     padding-top: 250px;
-    position:relative
+    background-color: #f1f9ff;
 }
 
 .download__inner {
     width: 440px;
 }
 
+.download__arrow {
+    margin-left: 10px;
+}
+
 .trafalgar__image {
-    display:block;
-    top: 250px;
-    right: 0px;
+    top: 265px;
+    right: 90px;
     position: absolute;
     width: 761px;
     height: 503px;
@@ -64,9 +67,8 @@
 .download__button {
     border: 2px solid dodgerblue;
     background-color: white;
-    width: 200px;
     font-weight: 500;
-    height: 56px;
+    height: 20px;
     color: dodgerblue;
     padding: 14px 28px;
     border-radius: 30px;
