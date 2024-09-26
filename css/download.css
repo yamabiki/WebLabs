@@ -1,20 +1,27 @@
 .download__container {
     padding-top: 250px;
-    position:relative
+    position:relative;
+    overflow: hidden;
+    padding-bottom: 160px;
 }
 
 .download__inner {
     width: 440px;
 }
 
+
 .trafalgar__image {
+    z-index: -1;
     display:block;
     top: 250px;
     right: 0px;
     position: absolute;
     width: 761px;
     height: 503px;
+    overflow: hidden;
 }
+
+
 
 
 .download__image {
@@ -71,4 +78,78 @@
     padding: 14px 28px;
     border-radius: 30px;
     font-size: 18px;
+    transition: background-color 0.3s, color 0.4s;
 }
+
+.download__button:hover {
+    background-color: dodgerblue;
+    color: white;
+}
+
+@media screen and (min-width:841px) and (max-width: 1286px) {
+    .download__inner {
+        width: 75%;
+        margin: auto;
+    }
+
+    .download__divider {
+        margin: auto;
+    }
+
+    .download__paragraph {
+        text-align: center;
+        margin: auto;
+        padding-top: 20px;
+    }
+
+    .download__button {
+        margin: auto;
+    }
+
+    .trafalgar__image {
+        left:400px;
+    }
+
+    .download__heading {
+        font-size: 40px;
+        text-align: center;
+        line-height: 66px;
+        letter-spacing: 0px;
+        color: #000000;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width:840px) {
+    .download__inner {
+        width: 75%;
+        margin: auto;
+    }
+
+    .download__divider {
+        margin: auto;
+    }
+
+    .download__paragraph {
+        text-align: center;
+        margin: auto;
+        padding-top: 20px;
+    }
+
+    .download__button {
+        margin: auto;
+    }
+
+    .trafalgar__image {
+        left:130px;
+    }
+
+    .download__heading {
+        font-size: 40px;
+        text-align: center;
+        line-height: 66px;
+        letter-spacing: 0px;
+        color: #000000;
+        margin-bottom: 20px;
+    }
+}
+

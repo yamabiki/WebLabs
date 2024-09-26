@@ -8,6 +8,8 @@
 	padding: 140px 180px 0px;
 }
 
+
+
 .user-testimony__content {
 	display: flex;
 	flex-direction: column;
@@ -21,25 +23,15 @@
 	margin: 0 auto;
 }
 
-	.user-testimony__content h1 {
-		color: #FFFFFF;
-	}
-
-@media screen and (max-width:368px) {
-	.user-testimony__content {
-		max-width: 100%;
-	}
-
-	.user-testimony__section {
-		padding: 70px 90px 0px;
-	}
+.user-testimony__content h1 {
+	color: #FFFFFF;
 }
 
 .user-testimony_divider {
 	height: 2px;
-	width: 60px;
+	width: 90px;
 	color: white;
-	margin-top: 10px;
+	margin-top: 40px;
 	border-radius: 20%;
 	background-color: white
 }
@@ -58,37 +50,126 @@
 	margin-right: 30px;
 }
 
-#person_info {
+.person_info {
 	margin-right: 70px;
 }
 
-#name {
+.name {
 	color: #FFFFFF;
 	font-size: 24px;
 	font-weight: 700;
 	min-width: 200px;
 }
 
-#status {
+.status {
 	color: #FFFFFFD9;
 	font-size: 19px;
 }
 
-#quote {
+.quote {
 	color: #FFFFFF;
 	width: 390px;
 	font-size: 19px;
 }
 
-.user-testimony__navigate {
-	margin-top: 42px;
-	margin-bottom: 142px;
-	display: flex;
+.user-testimony__button_left {
+	margin-right: 30px;
 }
 
-	.user-testimony__navigate button {
-		border: none;
-		margin-right: 90px;
-		margin-left: 90px;
-		background: transparent;
+.user-testimony__button_right {
+	margin-left: 30px;
+}
+
+.user-testimony__navigate {
+	margin-top: 40px;
+	margin-bottom: 100px;
+	display: block;
+	justify-content: space-between;
+
+}
+
+.user-testimony__navigate button {
+	border: none;
+	margin-right: 90px;
+	margin-left: 90px;
+	background: transparent;
+}
+
+@media screen and (max-width: 1285px) {
+	.user-testimony__section {
+		background-color: #f2f7fc;
+		margin-top: 140px;
+		display:block;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		padding: 3em 3em 0px;
+		overflow: hidden;
 	}
+	
+	.name {
+		text-align: center;	
+	}
+
+	.user-testimony__content {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: linear-gradient(to top right, #5A98F2, #67C3F3);
+		border-radius: 24px;
+		padding: 24px 4vw 79px 4vw;
+	}
+
+		.user-testimony__content h1 {
+			font-size: 2em;
+			text-align: center;
+			color: #FFFFFF;
+		}
+
+	.user-testimony_divider {
+		height: 2px;
+		width: 90px;
+		color: white;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		border-radius: 20%;
+		background-color: white;
+	}
+
+	.user-testimony__horizontal_content {
+		display:contents;
+		margin-right: 0px
+	}
+
+	.user-testimony__horizontal_content img {
+		margin-right: 0px;
+	}
+
+	.status {
+		text-align: center
+	}
+
+
+	.person_info {
+	margin-right: 0px;
+	}
+
+	.quote {
+		max-width: 90%;
+		text-align: center;
+		color: #FFFFFF;
+		width: 390px;
+		font-size: 19px;
+	}
+
+	.user-testimony__navigate {
+		align-content: center;
+		margin-top: 40px;
+		margin-bottom: 40px;
+		display: block;
+		position: relative;
+		text-align: center;
+	}
+}

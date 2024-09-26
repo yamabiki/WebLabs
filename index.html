@@ -10,7 +10,13 @@
 <body>
     <header>
         <div class="container header__container">
-            <nav class="header__nav">
+            <div class="header__menu" onclick="toggleMenu()">
+                <img src="images/menu-icon.svg" alt="Menu icon" class="menu-icon" />
+                <div class="cross" style="display: none;">
+                    <img src="images/cross.svg" alt="Close icon" />
+                </div>
+            </div>
+            <nav id="nav-links" class="header__nav">
                 <ul>
                     <li class="header__nav-item">
                         <a class="heaader__nav-link" href="">Home</a>
@@ -43,10 +49,11 @@
                 <div class="download__bottom">
                     <button class="download__button">
                         Download
-                        <img class="download__arrow" src="images/arrow_right_small.svg" />
+                        <img id="down_arrow" src="images/arrow_right_small.svg" />
                     </button>
+                    <img class="trafalgar__image" src="images/trafalgar-illustration.png" alt="trafalgar illustration">
                 </div>
-                <img class="trafalgar__image" src="images/trafalgar-illustration.png" alt="trafalgar illustration">
+
             </div>
 
         </div>
@@ -92,6 +99,7 @@
                             <img src="images/arrow_right_small.svg" alt="arrow_right_small">
                         </div>
                     </div>
+
                 </div>
             </div>
             <button>View all</button>
@@ -99,32 +107,32 @@
     </section>
     <section class="user-testimony__section">
         <div class="container user-testimony__content">
-            <h1>What our customer are saying</h1>
+            <h1>What our customers are saying</h1>
             <div class="user-testimony_divider" "alt=" divider line">
+        </div>
+        <div class="user-testimony__horizontal_content">
+            <img src="images/user-testimony.png" alt="image">
+            <div class="person_info">
+                <p class="name">Edward Newgate</p>
+                <p class="status">Founder Circle</p>
             </div>
-            <div class="user-testimony__horizontal_content">
-                <img src="images/user-testimony.png" alt="image">
-                <div id="person_info">
-                    <p id="name">Edward Newgate</p>
-                    <p id="status">Founder Circle</p>
-                </div>
-                <p id="quote">“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”</p>
-            </div>
+            <p class="quote">“Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely”</p>
+        </div>
         </div>
         <div class="user-testimony__navigate">
-            <button>
+            <a href="#" class="user-testimony__button_left">
                 <img src="images/arrow_left.svg" alt="arrow left">
-            </button>
+            </a>
             <img src="images/slider.svg" alt="slider">
-            <button>
+            <a href="#" class="user-testimony__button_right">
                 <img src="images/arrow_right.svg" alt="arrow right">
-            </button>
+            </a>
         </div>
     </section>
     <footer>
         <div class="footer__container">
             <img src="images/element.svg" alt="background element">
-            <img src="images/trafalgarlogowhite.svg" alt="logo">
+            <img class="bottom__logo" src="images/trafalgarlogowhite.svg" alt="logo">
             <nav>
                 <ul>
                     <li class="bottom_navigate">
@@ -138,6 +146,8 @@
                 </ul>
             </nav>
         </div>
+
     </footer>
+    <script src="js/main.js"></script>
 </body>
 </html>

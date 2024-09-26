@@ -1,10 +1,10 @@
 .hero__section {
-    display: relative;
     position: relative;
     justify-content: center;
     align-items: center;
     margin-top: 200px;
     width: 100%;
+    overflow: hidden;
 }
 
 .grid_image {
@@ -46,6 +46,18 @@
     flex-direction: row;
 }
 
+@media screen and (max-width: 1285px) {
+    .hero__articles {
+        width: 85%;
+        height: auto;
+        display: contents;
+    }
+    .hero__article {
+        width: 85%;
+        margin-top: 20px;
+    }
+}
+
 .hero__article {
     max-width: 100%;
     margin-right: 16px;
@@ -57,11 +69,80 @@
 
     .hero__article p {
         margin-top: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
+
+
 
 .hero__content button {
     margin-top: 40px;
     padding: 20px 64px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.hero__content button:hover {
+    background-color: #4089ED; /* Blue background */
+    color: #ffffff; /* White text */
+}
+
+@media screen and (max-width:779px) {
+    .hero__article p {
+        font-size: 2vw;
+        text-align: center;
+    }
+    .hero__section h1 {
+        font-size: 6vw;
+        text-align: center;
+
+    }
+
+    .hero__section h2 {
+        font-size: 4vw;
+        text-align: center;
+    }
+
+    .hero__divider {
+        margin-bottom: 30px ;
+    }
+    .hero__article .button {
+        text-align: center;
+    }
+
+    .hero__content h1 {
+        font-size: 4vw;
+        text-align: center;
+
+
+    }
+}
+
+@media screen and (min-width: 780px) and (max-width:1285px) {
+    .hero__article p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .hero__section h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .hero__section h2 {
+        padding-right: 10px;
+        padding-left: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+        .hero__articles {
+            margin-top: 30px;
+        width: 85%;
+        height: auto;
+        display: flex;
+    }
+    .button {
+        text-align: center;
+    }
 }
 
 .button {
@@ -72,8 +153,14 @@
     padding: 0px 0px;
 }
 
+.button a:hover {
+    background-color: #4089ED;
+    color: #ffffff;
+}
+
     .button a {
         color: #4089ED;
+        transition: background-color 0.3s, color 0.3s;
     }
 
 .title__description img {
@@ -81,9 +168,10 @@
 }
 
 .article_img {
-    width: 350px;
+    width: 100%;
     height: auto;
 }
+
 
 .title__description {
     max-width: 100%;
@@ -91,4 +179,12 @@
     padding-bottom: 42px;
     padding-left: 34px;
     padding-right: 72px;
+}
+
+@media screen and (max-width: 1286px) {
+    .title__description {
+
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
