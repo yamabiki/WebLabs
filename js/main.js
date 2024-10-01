@@ -20,17 +20,24 @@ function renderFlies(flies) {
     const flyList = document.getElementById('flies__content');
     flyList.innerHTML = '';
 
+    let totalMass = 0;
+
     flies.forEach(fly => {
-        const alcoholItem = document.createElement('div');
-        alcoholItem.classList.add('fly-item');
-        alcoholItem.innerHTML = `
+        const flyItem = document.createElement('div');
+        flyItem.classList.add('fly-item');
+        flyItem.innerHTML = `
                     <img src="${fly.image}" ${fly.name}" width="200">
                     <p>Назва: ${fly.name}</p>
                     <p>Швидкість: ${fly.speed}</p>
                     <p>Маса: ${fly.mass}</p>
                 `;
-        flyList.appendChild(alcoholItem);
-    });
+        flyList.appendChild(flyItem);
+
+    totalMass += fly.mass;
+});
+
+// Display total mass
+document.getElementById('totalMass').textContent = totalMass.toFixed(2);
 
 }
 

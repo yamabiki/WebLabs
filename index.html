@@ -10,7 +10,6 @@
 <body>
 <header>
   <nav class="header__menu">
-
     <ul>
       <li><input type="text" id="searchInput" placeholder="Пошук за назвою" oninput="searchFlyByName()"></li>
       <li><h1>Опції сортування:</h1></li>
@@ -19,12 +18,10 @@
       <li><button onclick="sortByMass()">Сортувати за масою</button></li>
     </ul>
   </nav>
-  <div class="header__gray">
-
-  </div>
 </header>
 <div id="flies__content">
 </div>
+<p id="total-mass">Загальна маса: <span id="totalMass"></span> г</p>
 <script src="js/main.js"></script>
 </body>
 </html>
