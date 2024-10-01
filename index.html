@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Blohi</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+<header>
+  <nav class="header__menu">
+
+    <ul>
+      <li><input type="text" id="searchInput" placeholder="Пошук за назвою" oninput="searchFlyByName()"></li>
+      <li><h1>Опції сортування:</h1></li>
+      <li><button onclick="sortByAlphabet()">Сортувати за алфавітом</button></li>
+      <li><button onclick="sortBySpeed()">Сортувати за швидкістю</button></li>
+      <li><button onclick="sortByMass()">Сортувати за масою</button></li>
+    </ul>
+  </nav>
+  <div class="header__gray">
+
+  </div>
+</header>
+<div id="flies__content">
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>

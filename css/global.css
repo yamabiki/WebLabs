@@ -1,0 +1,32 @@
+body {
+    font-family: "Mulish", sans-serif !important;
+    font-weight: 700;
+    font-style: normal;
+    margin: auto;
+    background: #ffffff;
+}
+.main__container {
+    background: #f6f5f5;
+    padding: 5px 0;
+}
+
+.main__container h1 {
+    text-align: center;
+    font-size: 24px;
+
+}
+
+.container {
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: block;
+}
+

@@ -1,0 +1,25 @@
+#flies__content {
+    top: 10px;
+    left:40px;
+    display: flex;
+    flex-flow: row;
+    justify-content: left;
+    margin: 20px 0;
+}
+
+.fly-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 80px;
+    padding: 20px;
+    margin: 20px;
+    line-height: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fly-item img {
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
