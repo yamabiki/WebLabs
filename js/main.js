@@ -89,7 +89,16 @@ function saveFly(event) {
     const image = document.getElementById('flyImage').value;
 
     if (!name || speed <= 0 || mass <= 0 || !image) {
-        alert('Please fill all fields with valid data.');
+        alert('Будь-ласка заповніть таблицю валідними даними');
+        return;
+    }
+
+    const flyExists = flyData.some((fly, index) =>
+        fly.name.toLowerCase() === name.toLowerCase() && index !== editingFlyIndex
+    );
+
+    if (flyExists) {
+        alert('Комаха з таким іменем вже існує в таблиці');
         return;
     }
 
