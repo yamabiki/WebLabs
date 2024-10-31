@@ -1,0 +1,11 @@
+.App {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #333;
+    width: 1700px;
+    margin: auto;
+}
+
+h1, h2, h3 {
+    margin: 0.5em 0;
+}
