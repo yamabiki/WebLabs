@@ -2,7 +2,8 @@ let flyData = []; // Declare flyData at the top of your script
 let editingFlyIndex = null
 
 async function fetchFlies(sortBy) {
-    const url = `http://localhost:3000/api/flies?sortBy=${sortBy || ''}`; // Append sortBy to the URL
+    const searchQuery = document.getElementById('searchInput').value; // Отримайте значення з поля пошуку
+    const url = `http://localhost:3000/api/flies?sortBy=${sortBy || ''}&search=${encodeURIComponent(searchQuery)}`; // Додайте search до URL
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -12,6 +13,7 @@ async function fetchFlies(sortBy) {
             console.error('Error fetching flies:', error);
         });
 }
+
 
 function editFly(id) {
     const fly = flyData.find(f => f.id === id); // Access flyData to find the fly
@@ -28,7 +30,6 @@ function editFly(id) {
 
 async function searchFlies() {
     const searchQuery = document.getElementById('searchInput').value;
-    // Encode the search query to handle spaces and special characters
     const url = `http://localhost:3000/api/flies?search=${encodeURIComponent(searchQuery)}`;
 
     try {

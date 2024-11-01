@@ -15,23 +15,33 @@ app.use(cors());
 
 app.get('/api/flies', (req, res) => {
     const searchQuery = req.query.search?.toLowerCase();
-    const sortBy = req.query.sortBy; // Get the sorting criteria
+    const sortBy = req.query.sortBy;
 
+    // Filter flies based on the search query
     let filteredFlies = searchQuery
         ? flyData.filter(fly => fly.name.toLowerCase().includes(searchQuery))
         : flyData;
 
-    // Sort the flies based on the sortBy parameter
-    if (sortBy === 'alphabet') {
-        filteredFlies.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortBy === 'speed') {
-        filteredFlies.sort((a, b) => a.speed - b.speed);
-    } else if (sortBy === 'mass') {
-        filteredFlies.sort((a, b) => a.mass - b.mass);
+    // Sort the filtered flies based on the selected criteria
+    switch (sortBy) {
+        case 'alphabet':
+            filteredFlies.sort((a, b) => a.name.localeCompare(b.name));
+            break;
+        case 'speed':
+            filteredFlies.sort((a, b) => a.speed - b.speed);
+            break;
+        case 'mass':
+            filteredFlies.sort((a, b) => a.mass - b.mass);
+            break;
+        default:
+            // No sorting applied if sortBy is not recognized
+            break;
     }
 
     res.json(filteredFlies);
 });
+
+
 
 
 // POST to create a new fly
