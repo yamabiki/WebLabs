@@ -58,10 +58,11 @@ function sortByMass() {
 }
 
 function searchFlyByName() {
-    const searchInput = document.getElementById('searchInput').value.toLowerCase();
-    const filteredFlies = flyData.filter(fly => fly.name.toLowerCase().includes(searchInput));
+    const searchInput = document.getElementById('searchInput').value.toLowerCase().replace(/\s+/g, '');
+    const filteredFlies = flyData.filter(fly => fly.name.toLowerCase().replace(/\s+/g, '').includes(searchInput));
     renderFlies(filteredFlies);
 }
+
 
 function showCreateForm() {
     document.getElementById('formTitle').textContent = 'Створити Комаху';
