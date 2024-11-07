@@ -1,0 +1,71 @@
+.home {
+    padding: 2rem;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 4rem;
+
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+}
+
+.hero-image {
+    width: 400px;
+    height: auto;
+    margin-right: 1rem;
+    border-radius: 8px;
+}
+
+.hero-text {
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    margin-left: 100px;
+}
+
+.hero-text h1 {
+    font-size: 2.3rem;
+    color: #333;
+}
+
+.hero-text p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.product-tiles {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.view-more {
+    background-color: #ffffff;
+    color: #2c2625;
+    border: none;
+    font-weight: bold;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.view-more:hover {
+    background-color: #ededed;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 9px rgba(0, 0, 0, 0.1);
+}
+
+.view-more:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

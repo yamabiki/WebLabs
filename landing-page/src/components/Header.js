@@ -1,20 +1,20 @@
-// src/components/Header.js
 import React from 'react';
 import './Header.css';
 
-function Header() {
-    return (
-        <header className="header">
-            <h1 className="logo">My Landing Page</h1>
-            <nav>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
-    );
-}
+import logoImage from '../images/logo.svg';
+
+const Header = () => (
+    <header className="header">
+        <div className="logo">
+            <img src={logoImage} alt="Bug Network Logo" className="logo-image" />
+            <span>Bug Network</span>
+        </div>
+        <nav className="nav">
+            <a href="/">Home</a>
+            <a href="/catalog">Articles</a>
+            <b href="/buy">Buy a bug!</b>
+        </nav>
+    </header>
+);
 
 export default Header;
