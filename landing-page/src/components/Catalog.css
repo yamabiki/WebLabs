@@ -1,0 +1,45 @@
+.catalog {
+
+}
+
+.catalog-header {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 2rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.filters select, .apply-button, .search-input {
+    margin: 0 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    border-color: transparent;
+    height: 40px;
+}
+
+.apply-button {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background: #e6e6e6;
+    color: #333333
+}
+
+.search-input {
+    padding: 0.5rem;
+    width: 200px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border-color: transparent;
+    height: 10px;
+    width: 370px;
+    margin: 20px;
+}
+
+.catalog-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
