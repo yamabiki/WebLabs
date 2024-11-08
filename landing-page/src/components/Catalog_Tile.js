@@ -9,7 +9,7 @@ const Tile = ({ title, description, price, image }) => (
         <h2>{title}</h2>
         <p>{description}</p>
         <p className="price">Price: <strong>${price}</strong></p>
-        <button className="view-more">View more</button>
+        <button className="view-more">View</button>
     </div>
 );
 
