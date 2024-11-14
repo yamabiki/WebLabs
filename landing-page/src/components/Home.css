@@ -69,3 +69,22 @@
     transform: translateY(0);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.product-tiles-wrapper {
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.product-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-tiles.closed {
+    max-height: 600px; /* Adjust this to suit the height of 3 items */
+}
+
+.product-tiles.open {
+    max-height: 2000px; /* A high value to allow all items to fit */
+}
