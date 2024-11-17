@@ -1,12 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { catalogItems } from './Catalog'; // Import catalogItems correctly
 import './Item.css';
+import LoadingSpinner from './LoadingSpinner';  // Import the loading spinner
 
 const Item = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const item = catalogItems.find((item) => item.id === parseInt(id, 10));
+    const [item, setItem] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchItem = async () => {
+            try {
+                const response = await fetch(`http://localhost:5001/api/catalog/${id}`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch item');
+                }
+                const data = await response.json();
+                setItem(data);
+            } catch (err) {
+                setError(err.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchItem();
+    }, [id]);
+
+    if (loading) {
+        return (
+            <div className="loading-container">
+                <LoadingSpinner />
+            </div>
+        );
+    }
+
+    if (error) {
+        return <div>Error: {error}</div>;
+    }
 
     if (!item) {
         return <div>Item not found</div>;
@@ -16,7 +49,7 @@ const Item = () => {
         <main className="product-detail">
             <div className="image-container">
                 <div className="product-image">
-                    <img src={item.image} alt={item.title}/>
+                    <img src={`http://localhost:5001${item.image}`} alt={item.title} />
                 </div>
             </div>
             <div className="product-info">
