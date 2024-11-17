@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import axios from 'axios';  // Import Axios
 import './Item.css';
 import LoadingSpinner from './LoadingSpinner';  // Import the loading spinner
 
@@ -13,14 +14,10 @@ const Item = () => {
     useEffect(() => {
         const fetchItem = async () => {
             try {
-                const response = await fetch(`http://localhost:5001/api/catalog/${id}`);
-                if (!response.ok) {
-                    throw new Error('Failed to fetch item');
-                }
-                const data = await response.json();
-                setItem(data);
+                const response = await axios.get(`http://localhost:5001/api/catalog/${id}`);
+                setItem(response.data);
             } catch (err) {
-                setError(err.message);
+                setError('Failed to fetch item');
             } finally {
                 setLoading(false);
             }

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Tile from './Catalog_Tile';
 import Filter from './Filter';
 import './Catalog.css';
@@ -9,21 +10,25 @@ const Catalog = () => {
     const [catalogItems, setCatalogItems] = useState([]);
     const [selectedFilters, setSelectedFilters] = useState({});
     const [searchTerm, setSearchTerm] = useState('');
-    const [loading, setLoading] = useState(false);  // New state for loading
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const fetchCatalogItems = async () => {
-            setLoading(true);  // Set loading to true before fetching data
-            const params = new URLSearchParams();
+            setLoading(true);
+            const params = {};
 
-            if (searchTerm) params.append('search', searchTerm);
-            if (selectedFilters[0]) params.append('priceRange', selectedFilters[0]);
-            if (selectedFilters[1]) params.append('category', selectedFilters[1]);
+            if (searchTerm) params.search = searchTerm;
+            if (selectedFilters[0]) params.priceRange = selectedFilters[0];
+            if (selectedFilters[1]) params.category = selectedFilters[1];
 
-            const response = await fetch(`http://localhost:5001/api/catalog?${params}`);
-            const data = await response.json();
-            setCatalogItems(data);
-            setLoading(false);
+            try {
+                const response = await axios.get('http://localhost:5001/api/catalog', { params });
+                setCatalogItems(response.data);
+            } catch (error) {
+                console.error('Error fetching catalog items:', error);
+            } finally {
+                setLoading(false);
+            }
         };
 
         fetchCatalogItems();
@@ -53,7 +58,7 @@ const Catalog = () => {
             </header>
             <section className="catalog-grid">
                 {loading ? (
-                    <div className="loading-spinner"></div>  // Display loading circle when loading
+                    <div className="loading-spinner"></div>
                 ) : (
                     catalogItems.map((item) => (
                         <Tile
