@@ -6,15 +6,24 @@ const port = process.env.PORT || 5001;
 
 app.use(express.json());
 app.use(cors());
-app.use('/images', express.static(path.join(__dirname,'images')));
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
 const catalogItems = [
-    { id: 1, title: 'Regular Fly', description: 'A regular fly', price: 100, category: 'Fly', image:'/images/bug1.png' },
+    { id: 1, title: 'Regular Fly', description: 'A regular fly', price: 100, category: 'Fly', image: '/images/bug1.png' },
     { id: 2, title: 'A wasp', description: 'Ooh, a dangerous and mean one!', price: 200, category: 'Wasp', image: '/images/bug2.png' },
     { id: 3, title: 'A weird bug!', description: 'Thats a burger... again', price: 499, category: 'Bug', image: '/images/bug3.png' },
     { id: 4, title: 'A dude', description: 'What?', price: 2415, category: 'Other', image: '/images/bug4.png' },
     { id: 5, title: 'A dudah', description: 'What?', price: 2415, category: 'Other', image: '/images/bug4.png' },
 ];
+
+// Функція для додавання повного URL до зображень
+const addFullImageUrls = (items, req) => {
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
+    return items.map(item => ({
+        ...item,
+        image: `${baseUrl}${item.image}`, // Формуємо повний URL до зображення
+    }));
+};
 
 app.get('/api/catalog', (req, res) => {
     const { search, priceRange, category } = req.query;
@@ -43,7 +52,7 @@ app.get('/api/catalog', (req, res) => {
         );
     }
 
-    res.json(filteredItems);
+    res.json(addFullImageUrls(filteredItems, req)); // Додаємо повні URL
 });
 
 app.get('/api/catalog/:id', (req, res) => {
@@ -51,9 +60,12 @@ app.get('/api/catalog/:id', (req, res) => {
     const item = catalogItems.find((item) => item.id === parseInt(id, 10));
 
     if (item) {
-        res.json(item); // Send back the item data
+        res.json({
+            ...item,
+            image: `${req.protocol}://${req.get('host')}${item.image}` // Додаємо повний URL
+        });
     } else {
-        res.status(404).json({ error: 'Item not found' }); // Handle 404 if item doesn't exist
+        res.status(404).json({ error: 'Item not found' });
     }
 });
 
