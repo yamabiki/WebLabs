@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import { fetchCatalogItems } from './Api'; // Імпорт функції
 import Tile from './Catalog_Tile';
 import Filter from './Filter';
 import './Catalog.css';
@@ -13,7 +13,7 @@ const Catalog = () => {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const fetchCatalogItems = async () => {
+        const getCatalogItems = async () => {
             setLoading(true);
             const params = {};
 
@@ -22,8 +22,8 @@ const Catalog = () => {
             if (selectedFilters[1]) params.category = selectedFilters[1];
 
             try {
-                const response = await axios.get('http://localhost:5001/api/catalog', { params });
-                setCatalogItems(response.data);
+                const data = await fetchCatalogItems(params);
+                setCatalogItems(data);
             } catch (error) {
                 console.error('Error fetching catalog items:', error);
             } finally {
@@ -31,7 +31,7 @@ const Catalog = () => {
             }
         };
 
-        fetchCatalogItems();
+        getCatalogItems();
     }, [selectedFilters, searchTerm]);
 
     const handleFilterChange = (filterIndex, value) => {
@@ -67,7 +67,7 @@ const Catalog = () => {
                             title={item.title}
                             description={item.description}
                             price={item.price}
-                            image={`http://localhost:5001${item.image}`}
+                            image={item.image}
                         />
                     ))
                 )}

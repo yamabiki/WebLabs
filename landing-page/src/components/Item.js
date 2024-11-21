@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import axios from 'axios';  // Import Axios
+import { fetchItemById } from './Api'; // Імпорт функції
 import './Item.css';
-import LoadingSpinner from './LoadingSpinner';  // Import the loading spinner
+import LoadingSpinner from './LoadingSpinner';
 
 const Item = () => {
     const { id } = useParams();
@@ -12,10 +12,11 @@ const Item = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        const fetchItem = async () => {
+        const getItem = async () => {
+            setLoading(true);
             try {
-                const response = await axios.get(`http://localhost:5001/api/catalog/${id}`);
-                setItem(response.data);
+                const data = await fetchItemById(id);
+                setItem(data);
             } catch (err) {
                 setError('Failed to fetch item');
             } finally {
@@ -23,7 +24,7 @@ const Item = () => {
             }
         };
 
-        fetchItem();
+        getItem();
     }, [id]);
 
     if (loading) {
@@ -46,7 +47,7 @@ const Item = () => {
         <main className="product-detail">
             <div className="image-container">
                 <div className="product-image">
-                    <img src={`http://localhost:5001${item.image}`} alt={item.title} />
+                    <img src={item.image} alt={item.title} />
                 </div>
             </div>
             <div className="product-info">
