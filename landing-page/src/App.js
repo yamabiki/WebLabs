@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Footer from './components/Footer';
 import Catalog from './components/Catalog';
 import Item from './components/Item';
+import ShoppingCart from "./components/Cart/ShoppingCart";
 import './App.css';
 
 const App = () => (
@@ -15,6 +16,7 @@ const App = () => (
                 <Route path="/" element={<Home />} />
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/catalog/:id" element={<Item />} />
+                <Route path="/cart" element={<ShoppingCart />} />
             </Routes>
             <Footer />
         </Router>

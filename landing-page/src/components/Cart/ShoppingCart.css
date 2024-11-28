@@ -1,0 +1,161 @@
+.shopping-cart {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.cart-item-details {
+    flex: 2;
+    margin-left: 1rem;
+}
+
+.cart-item-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.cart-item-size {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quantity-controls button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.quantity-controls span {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.cart-item-price p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 12px;
+}
+
+.cart-item-remove {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cart-item-remove:hover {
+    background-color: #d32f2f;
+}
+
+.cart-total {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+.cart-total h3 {
+    font-size: 1.5rem;
+}
+
+.cart-checkout {
+    padding: 0.8rem 2rem;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+.cart-checkout:hover {
+    background-color: #555;
+}
+
+.back-to-catalog {
+    margin-top: 2rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-to-catalog:hover {
+    background-color: #eee;
+}
+
+.cart-item-image img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+
+.cart-clear {
+    background-color: #ff4d4d; /* Bright red background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Add padding for a larger button */
+    font-size: 1rem; /* Adjust the font size */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* Hover effect */
+.cart-clear:hover {
+    background-color: #ff1a1a; /* Darker red on hover */
+    transform: scale(1.05); /* Slightly enlarge the button */
+}
+
+/* Active state (when clicked) */
+.cart-clear:active {
+    background-color: #e60000; /* Even darker red */
+    transform: scale(0.95); /* Slightly shrink on click */
+}

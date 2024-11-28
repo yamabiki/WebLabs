@@ -69,6 +69,52 @@ app.get('/api/catalog/:id', (req, res) => {
     }
 });
 
+const cart = [];
+
+// Fetch all cart items
+app.get('/cart', (req, res) => {
+    res.json(cart);
+});
+
+// Add an item to the cart
+app.post('/cart', (req, res) => {
+    const newItem = req.body;
+    cart.push(newItem);
+    res.status(201).json(newItem);
+});
+
+// Update an item in the cart
+app.put('/cart/:id', (req, res) => {
+    const { id } = req.params;
+    const { size, quantity } = req.body;
+    const item = cart.find((item) => item.id === id && item.size === size);
+    if (item) {
+        item.quantity = quantity;
+        res.json(item);
+    } else {
+        res.status(404).json({ error: 'Item not found' });
+    }
+});
+
+// Delete an item from the cart
+app.delete('/cart/:id', (req, res) => {
+    const { id } = req.params;
+    const { size } = req.body;
+    const index = cart.findIndex((item) => item.id === id && item.size === size);
+    if (index !== -1) {
+        const removedItem = cart.splice(index, 1);
+        res.json(removedItem);
+    } else {
+        res.status(404).json({ error: 'Item not found' });
+    }
+});
+
+// Clear the cart
+app.delete('/cart', (req, res) => {
+    cart.length = 0;
+    res.status(204).send();
+});
+
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
 });
