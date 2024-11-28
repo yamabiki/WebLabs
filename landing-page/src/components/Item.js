@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import {fetchCatalogItems, fetchItemById} from './Api'; // Імпорт функції
+import {fetchItemById} from './Api'; // Імпорт функції
 import './Item.css';
 import LoadingSpinner from './LoadingSpinner';
 import { useDispatch } from 'react-redux';

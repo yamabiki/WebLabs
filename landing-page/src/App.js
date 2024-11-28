@@ -6,6 +6,8 @@ import Footer from './components/Footer';
 import Catalog from './components/Catalog';
 import Item from './components/Item';
 import ShoppingCart from "./components/Cart/ShoppingCart";
+import Checkout from "./components/Checkout/Checkout";
+import Success from "./components/Success/Success"
 import './App.css';
 
 const App = () => (
@@ -17,6 +19,8 @@ const App = () => (
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/catalog/:id" element={<Item />} />
                 <Route path="/cart" element={<ShoppingCart />} />
+                <Route path="/checkout"  element={<Checkout />} />
+                <Route path="/success" element={<Success />} />
             </Routes>
             <Footer />
         </Router>

@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 import { updateQuantity, removeFromCart, clearCart } from '../Actions/action';
 import './ShoppingCart.css';
 
 const ShoppingCart = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();  // Hook for navigation
     const cart = useSelector((state) => state.cart);
 
     const handleQuantityChange = (id, size, quantity) => {
@@ -14,12 +16,11 @@ const ShoppingCart = () => {
     };
 
     const removeBaseUrl = (imagePath) => {
-        // Check if the imagePath starts with the base URL and remove it
         const baseUrl = 'http://localhost:5001';
         if (imagePath && imagePath.startsWith(baseUrl)) {
             return imagePath.replace(baseUrl, '');
         }
-        return imagePath; // If no base URL is found, return the image path as is
+        return imagePath;
     };
 
     const handleRemove = (id, size) => {
@@ -30,6 +31,11 @@ const ShoppingCart = () => {
         if (window.confirm('Are you sure you want to clear the cart?')) {
             dispatch(clearCart());
         }
+    };
+
+    const handleCheckout = () => {
+        // Redirect to Checkout page
+        navigate('/checkout');
     };
 
     const totalAmount = cart.items.reduce((sum, item) => sum + item.totalPrice, 0).toFixed(2);
@@ -64,6 +70,7 @@ const ShoppingCart = () => {
                     <div className="cart-total">
                         <h3>Total amount: ${totalAmount}</h3>
                         <button className="cart-clear" onClick={handleClearCart}>Clear Cart</button>
+                        <button className="cart-checkout" onClick={handleCheckout}>Proceed to Checkout</button>
                     </div>
                 </>
             ) : (

@@ -148,6 +148,17 @@ h2 {
     transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
+.cart-checkout {
+    background-color: #006A4E; /* Bright red background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Add padding for a larger button */
+    font-size: 1rem; /* Adjust the font size */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
 /* Hover effect */
 .cart-clear:hover {
     background-color: #ff1a1a; /* Darker red on hover */
